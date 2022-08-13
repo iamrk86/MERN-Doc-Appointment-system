@@ -54,6 +54,9 @@
   text-decoration: underline;
 }
 /* common styles */
+.remix-icons {
+  font-size: 18px;
+}
 .loader {
   display: flex;
   justify-content: center;

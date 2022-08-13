@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import Layout from "../components/Layout";
 
 const HomePage = () => {
   const { loading } = useSelector((state) => state.alerts);
@@ -24,7 +25,7 @@ const HomePage = () => {
     getData();
   }, []);
 
-  return <div>HomePage</div>;
+  return <Layout>HomePage</Layout>;
 };
 
 export default HomePage;

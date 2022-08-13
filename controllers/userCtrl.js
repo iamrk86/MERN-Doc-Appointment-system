@@ -15,8 +15,8 @@ const getUserByIdCtrl = async (req, res) => {
       res.status(200).send({
         success: true,
         data: {
-          name: user.name,
-          email: user.email,
+          ...user._doc,
+          password: "",
         },
       });
     }

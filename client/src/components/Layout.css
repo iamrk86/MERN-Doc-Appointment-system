@@ -1,0 +1,97 @@
+.main {
+  padding: 20px;
+}
+
+.sidebar {
+  background-color: #005555;
+  border-radius: 5px;
+  box-shadow: 0 0 2px gray;
+  margin-right: 20px;
+  padding: 10px;
+}
+
+.content {
+  width: 100%;
+}
+.header {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 2px gray;
+  margin-bottom: 20px;
+  height: 10vh;
+  width: 100%;
+}
+
+.body {
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 2px gray;
+  height: 82vh;
+}
+.menu {
+  margin-top: 100px;
+  padding: 0 15px;
+}
+.menu-item {
+  margin-top: 30px;
+  padding: 0 10pz;
+}
+
+.menu-item a {
+  color: white;
+  font-size: 16px;
+}
+.menu-item:hover,
+.menu-item a:hover {
+  background-color: #035c5c;
+  color: white;
+}
+
+.menu-item i {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  margin: 0 15px;
+  opacity: 0.7;
+}
+
+.menu-item-active {
+  color: white;
+  background-color: #001e1e;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 0 2px gray;
+  margin-bottom: 20px;
+}
+
+.header .header-action-icon {
+  font-size: 30px;
+  color: black;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.anchor {
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+.anchor:hover {
+  background-color: #035c5c;
+  border-radius: 10px;
+  padding: 10px;
+  color: white;
+}
+@media (max-width: 768px) {
+  .menu {
+    padding: 0 5px;
+  }
+}
