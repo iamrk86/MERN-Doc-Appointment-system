@@ -1,6 +1,7 @@
 const userModel = require("../model/userModel");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
+const doctorModel = require("../model/doctorModel");
 
 //protected route
 const getUserByIdCtrl = async (req, res) => {
@@ -95,4 +96,38 @@ const registerController = async (req, res) => {
   }
 };
 
-module.exports = { loginController, registerController, getUserByIdCtrl };
+const applyDoctorCtrl = async (req, res) => {
+  try {
+    const newDoctor = new doctorModel({ ...req.body, status: "pending" });
+    await newDoctor.save();
+    const adminUser = await userModel.findOne({ isAdmin: true });
+    const unseenNotification = adminUser.unseenNotification;
+    unseenNotification.push({
+      type: "new-doctor-request",
+      message: `${newDoctor.firstName} ${newDoctor.lastName} has applied for a doctor`,
+      data: {
+        doctorId: newDoctor._id,
+        name: newDoctor.firstName + " " + newDoctor.lastName,
+      },
+      onClickPath: "/admin/doctors",
+    });
+    await userModel.findByIdAndUpdate(adminUser._id, { unseenNotification });
+    res.status(200).send({
+      success: true,
+      message: "Doctor account Applyed success",
+    });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({
+      message: "Doctor API ISSUE",
+      error,
+      success: false,
+    });
+  }
+};
+module.exports = {
+  loginController,
+  registerController,
+  getUserByIdCtrl,
+  applyDoctorCtrl,
+};

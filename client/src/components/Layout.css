@@ -27,6 +27,8 @@
   border-radius: 5px;
   box-shadow: 0 0 2px gray;
   height: 82vh;
+  overflow-x: hidden;
+  padding: 15px;
 }
 .menu {
   margin-top: 100px;
@@ -34,7 +36,7 @@
 }
 .menu-item {
   margin-top: 30px;
-  padding: 0 10pz;
+  padding: 0 10px;
 }
 
 .menu-item a {
@@ -59,6 +61,7 @@
   color: white;
   background-color: #001e1e;
   padding: 5px;
+
   border-radius: 5px;
 }
 
@@ -83,6 +86,7 @@
   color: black;
   font-weight: bold;
   font-size: 1rem;
+  margin-left: 20px;
 }
 .anchor:hover {
   background-color: #035c5c;
@@ -90,6 +94,7 @@
   padding: 10px;
   color: white;
 }
+
 @media (max-width: 768px) {
   .menu {
     padding: 0 5px;

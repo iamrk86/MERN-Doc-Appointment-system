@@ -4,6 +4,7 @@ const {
   loginController,
   registerController,
   getUserByIdCtrl,
+  applyDoctorCtrl,
 } = require("../controllers/userCtrl");
 
 const router = express.Router();
@@ -14,5 +15,7 @@ router.post("/register", registerController);
 router.post("/login", loginController);
 //protected route
 router.post("/getUserById", authMiddleware, getUserByIdCtrl);
+//apply as doc == POST
+router.post("/applyDoctorAccount", authMiddleware, applyDoctorCtrl);
 
 module.exports = router;
